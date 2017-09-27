@@ -2,8 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-// const store = require('./store')
-// const events = require('./events')
+const events = require('./events')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -81,6 +80,10 @@ divFive.addEventListener('click', onPlayerMove)
 divSix.addEventListener('click', onPlayerMove)
 divSeven.addEventListener('click', onPlayerMove)
 divEight.addEventListener('click', onPlayerMove)
+
+$(() => {
+  events.addHandlers()
+})
 
 // module.exports = {
 //   gameBoard,

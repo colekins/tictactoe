@@ -17,9 +17,8 @@ body {
 }
 
 .col-xs-4 {
-  // padding-bottom: 15%;
-  height: 13vw;
-  width: 15vw;
+  height: 11vw;
+  width: 14vw;
 }
 
 .col-xs-4:hover {
@@ -27,28 +26,28 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  margin-bottom: 10%;
 }
 
 .row {
   font-size: 100px;
   text-align: center;
-  margin: 0 14%;
+  margin: 0 18%;
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1030px) {
   .col-xs-4 {
-    height: 17vw;
-    width: 17vw;
+    height: 14vw;
+    width: 14vw;
 }
 
   .row {
-    font-size: 60px;
+    font-size: 70px;
 }
  }
 
-@media (max-width: 390px) {
+@media (max-width: 550px) {
   .row {
-    font-size: 40px;
+    font-size: 35px;
  }
   }

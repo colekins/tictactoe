@@ -1,53 +1,47 @@
-const indexJs = require('./index.js')
-const gameBoard = indexJs.gameBoard
+const getFormFields = require(`../../lib/get-form-fields`)
+const api = require('./api')
+const ui = require('./ui')
 
-const updateBoard = function (divId) {
-  indexJs.gameBoard.forEach(function (item, index) {
-    if (item === divId) {
-      indexJs.gameBoard[index] = indexJs.lastTurn
-    }
-  })
-  console.log(gameBoard)
+const onSignUp = function (event) {
+  const data = getFormFields(this)
+  // console.log(data)
+  event.preventDefault()
+  api.signUp(data)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
 }
 
-const checkBoard = function () {
-  if (gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) {
-    console.log('scenario 1')
-  } else if (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5]) {
-    console.log('scenario 2')
-  } else if (gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8]) {
-    console.log('scenario 3')
-  } else if (gameBoard[0] === gameBoard[3] && gameBoard[3] === gameBoard[6]) {
-    console.log('scenario 4')
-  } else if (gameBoard[1] === gameBoard[4] && gameBoard[4] === gameBoard[7]) {
-    console.log('scenario 5')
-  } else if (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8]) {
-    console.log('scenario 6')
-  } else if (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) {
-    console.log('scenario 7')
-  } else if (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6]) {
-    console.log('scenario 8')
-  }
+const onSignIn = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
 }
 
-const onPlayerMove = function () {
-  if (this.textContent === 'O' || this.textContent === 'X') {
-    return undefined
-  } else if (indexJs.lastTurn === 'O') {
-    this.textContent = 'X'
-    indexJs.lastTurn = 'X'
-  } else if (indexJs.lastTurn === 'X') {
-    this.textContent = 'O'
-    indexJs.lastTurn = 'O'
-  }
-  const divId = this.id
-  updateBoard(divId)
-  checkBoard()
-  // console.log(this.id)
+const onChangePassword = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.changePassword(data)
+    .then(ui.passwordSuccess)
+    .catch(ui.passwordFail)
+}
+
+const onSignOut = function (event) {
+  // const data = getFormFields(this)
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFail)
+}
+
+const addHandlers = function () {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
+  $('#sign-out').on('submit', onSignOut)
 }
 
 module.exports = {
-  updateBoard,
-  checkBoard,
-  onPlayerMove
+  addHandlers
 }
