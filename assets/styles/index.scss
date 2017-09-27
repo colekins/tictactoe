@@ -4,6 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: #fff;
 $font-color: #000;
 $border-color: #000;
+$hover-color: #E8E8E8;
 
 body {
   background-color: $background-color;
@@ -15,14 +16,24 @@ body {
 }
 
 .col-xs-4 {
-  // height: 200px;
-  // width: 200px;
-  // min-height: 120px;
-  // min-width: 120px;
-  padding-bottom: 10%;
+  // padding-bottom: 15%;
+  height: 17vw;
+  width: 17vw;
 }
 
-.row{
-  text-align: center;
-  font-size: 70px;
+.col-xs-4:hover {
+  background-color: $hover-color;
 }
+
+.row {
+  font-size: 70px;
+  text-align: center;
+  margin: auto;
+}
+
+@media (max-width: 800px) {
+  .col-xs-4 {
+    height: 22vw;
+    width: 22vw;
+}
+ }
