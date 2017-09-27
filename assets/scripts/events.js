@@ -17,7 +17,8 @@ const onSignIn = function (event) {
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(unhideButton)
+    .then(unhideSignOut)
+    .then(hideSignIn)
     .catch(ui.signInFailure)
 }
 
@@ -34,6 +35,9 @@ const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
+    .then(hideSignIn)
+    .then(unhideSignOut)
+    .then(document.getElementById('sign-in').reset())
     .catch(ui.signOutFail)
 }
 
@@ -42,8 +46,12 @@ const unhide = function () {
   console.log(this.parentElement.parentElement.children[1])
 }
 
-const unhideButton = function () {
-  $('.hiddenButton').toggleClass('hidden unhidden')
+const unhideSignOut = function () {
+  $('.signOutButton').toggleClass('hidden unhidden')
+  // console.log(parentElement)
+}
+const hideSignIn = function () {
+  $('#sign-in').toggleClass('hidden unhidden')
   // console.log(parentElement)
 }
 

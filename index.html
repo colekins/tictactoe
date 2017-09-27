@@ -15,7 +15,7 @@
       <h1>Tic Tac Toe</h1>
       <div class="message"id='message'></div>
       <div class="row">
-      <div class="col-xs-12"><form id="sign-in">
+      <div class="col-xs-12 unhidden"><form id="sign-in">
             <fieldset>
               <legend>Sign in:</legend>
                 <input type="text" name="credentials[email]" placeholder="Email">
@@ -23,6 +23,7 @@
                 <input type="submit" name="submit" value="Sign in">
             </fieldset>
       </form></div>
+      <input type="submit" class="hidden signOutButton" id="sign-out" value="Sign out">
     </div>
       <div class="row">
       <div class="col-xs-6"><form id="sign-up">
@@ -48,8 +49,7 @@
   </form></div>
 </div>
       <button type="button" class="reset">Reset</button>
-      <input type="submit" class="hidden hiddenButton" id="sign-out" value="Sign out">
-      <br>
+            <br>
       <div class="container">
               <div class="row game">
                 <div class="col-xs-4 box" id="d0"></div>
