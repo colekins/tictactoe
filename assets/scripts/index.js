@@ -7,7 +7,7 @@ const events = require('./events')
 $(() => {
   setAPIOrigin(location, config)
 })
-const gameBoard = ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8']
+let gameBoard = ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8']
 let lastTurn = 'O'
 
 // each tictactoe square:
@@ -28,7 +28,7 @@ const updateBoard = function (divId) {
       gameBoard[index] = lastTurn
     }
   })
-  console.log(gameBoard)
+  // console.log(gameBoard)
 }
 
 const winGame = function () {
@@ -68,7 +68,18 @@ const onPlayerMove = function () {
   const divId = this.id
   updateBoard(divId)
   checkBoard()
+  console.log(gameBoard)
   // console.log(this.id)
+}
+const reset = function () {
+  gameBoard = ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8']
+  lastTurn = 'O'
+  for (let i = 0; i < gameBoard.length; i++) {
+    const current = document.querySelector('#d' + i)
+    current.textContent = null
+  }
+  $('#message').text(' ')
+  console.log(gameBoard)
 }
 
 divZero.addEventListener('click', onPlayerMove)
@@ -83,11 +94,11 @@ divEight.addEventListener('click', onPlayerMove)
 
 $(() => {
   events.addHandlers()
+  $('.reset').on('click', reset)
 })
 
 // module.exports = {
-//   gameBoard,
-//   lastTurn
+//   reset
 // }
 
 // use require with a reference to bundle the file and use it in this file
