@@ -14,44 +14,52 @@
     <body class="container">
       <h1>Tic Tac Toe</h1>
       <div class="message"id='message'></div>
-      <form id="sign-up">
+      <div class="row">
+      <div class="col-xs-12"><form id="sign-in">
+            <fieldset>
+              <legend>Sign in:</legend>
+                <input type="text" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="submit" name="submit" value="Sign in">
+            </fieldset>
+      </form></div>
+    </div>
+      <div class="row">
+      <div class="col-xs-6"><form id="sign-up">
         <fieldset>
-          <legend>Sign up:</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" name="submit" value="Sign up!">
+          <legend><a class="toggle" href="#">Sign up</a></legend>
+          <div class="hidden">
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" name="submit" value="Sign up!">
+        </div>
         </fieldset>
-  </form>
-  <form id="sign-in">
-        <fieldset>
-          <legend>Sign in:</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" name="submit" value="Sign in!">
-        </fieldset>
-  </form>
-  <form id="change-password">
+  </form></div>
+  <div class="col-xs-6"><form id="change-password">
       <fieldset>
-        <legend>Change Password:</legend>
-        <input type="password" name="passwords[old]" placeholder="Current Password">
-        <input type="password" name="passwords[new]" placeholder="New Password">
-        <input type="submit" name="submit" value="Change Password">
+        <legend><a class="toggle" href="#">Change Password</a></legend>
+        <div class="hidden">
+          <input type="password" name="passwords[old]" placeholder="Current Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password">
+        </div>
       </fieldset>
-  </form>
+  </form></div>
+</div>
       <br>
       <div class="container">
-              <div class="row">
+              <div class="row game">
                 <div class="col-xs-4 box" id="d0"></div>
                 <div class="col-xs-4 box" id="d1"></div>
                 <div class="col-xs-4 box" id="d2"></div>
               </div>
-            <div class="row">
+            <div class="row game">
                 <div class="col-xs-4 box" id="d3"></div>
                 <div class="col-xs-4 box" id="d4"></div>
                 <div class="col-xs-4 box" id="d5"></div>
               </div>
-            <div class="row">
+            <div class="row game">
               <div class="col-xs-4 box" id="d6"></div>
               <div class="col-xs-4 box" id="d7"></div>
               <div class="col-xs-4 box" id="d8"></div>

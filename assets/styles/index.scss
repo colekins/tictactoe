@@ -4,9 +4,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: #fff;
 $font-color: #000;
 $border-color: #000;
-$hover-color: #e8e8e8;
+$hover-color: #ddeffc;
 $messagebanner-color: #f4fafe;
-$message-color: #2F4F4F;
+$message-color: #2f4f4f;
 
 body {
   background-color: $background-color;
@@ -28,13 +28,13 @@ body {
 }
 
 .container {
-  margin-bottom: 10%;
+  margin: 5%, auto
 }
 
-.row {
+.game{
   font-size: 100px;
   text-align: center;
-  margin: 0 18%;
+  margin: 0 19%;
 }
 
 .message {
@@ -47,17 +47,35 @@ body {
 
 @media (max-width: 1030px) {
   .col-xs-4 {
-    height: 14vw;
-    width: 14vw;
+    height: 15vw;
+    width: 15vw;
 }
 
-  .row {
+  .game {
     font-size: 70px;
 }
  }
 
 @media (max-width: 550px) {
-  .row {
+  .game {
     font-size: 35px;
  }
   }
+
+@media (max-width: 380px) {
+  .game {
+    font-size: 35px;
+    margin: 0 12%;
+ }
+  }
+
+.toggle {
+font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+.unhidden {
+  display: block;
+}
