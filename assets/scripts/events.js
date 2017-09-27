@@ -1,7 +1,7 @@
 const getFormFields = require(`../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
-const index = require('./index')
+// const index = require('./index')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)

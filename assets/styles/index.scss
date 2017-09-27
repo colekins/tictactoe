@@ -7,34 +7,49 @@ $border-color: #000;
 $hover-color: #ddeffc;
 $messagebanner-color: #f4fafe;
 $message-color: #2f4f4f;
+$titlebanner-color: #c5e5fa;
 
 body {
   background-color: $background-color;
   color: $font-color;
   text-align: center;
 }
-
+h1 {
+  background-color: $titlebanner-color;
+  color: $font-color;
+  padding: 0 22px;
+}
 .box {
   border: 1px solid $border-color;
 }
 
 .col-xs-4 {
   height: 11vw;
-  width: 13vw;
+  width: 11vw;
+  // max-width: 200px;
+  // max-height: 200px;
+  // height: 100%;
+  // width: 100%;
 }
+
+// .col-md-4 {
+//   height: 11vw;
+//   width: 11vw;
+// }
 
 .col-xs-4:hover {
   background-color: $hover-color;
 }
 
-.container {
-  margin: 5%, auto
+.gameArea {
+  max-width: 1300px;
+  text-align: center;
+  margin: 0 23%;
 }
 
 .game{
   font-size: 100px;
   text-align: center;
-  margin: 0 18%;
 }
 
 .reset {
