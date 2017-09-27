@@ -20,7 +20,7 @@ body {
 
 .col-xs-4 {
   height: 11vw;
-  width: 14vw;
+  width: 13vw;
 }
 
 .col-xs-4:hover {
@@ -34,7 +34,11 @@ body {
 .game{
   font-size: 100px;
   text-align: center;
-  margin: 0 19%;
+  margin: 0 18%;
+}
+
+.reset {
+  margin: 8px 0;
 }
 
 .message {
