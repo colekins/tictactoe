@@ -45,6 +45,10 @@ const checkBoard = function () {
     console.log('scenario 5')
   } else if (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8]) {
     console.log('scenario 6')
+  } else if (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) {
+    console.log('scenario 7')
+  } else if (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6]) {
+    console.log('scenario 8')
   }
 }
 
@@ -73,6 +77,11 @@ divFive.addEventListener('click', onPlayerMove)
 divSix.addEventListener('click', onPlayerMove)
 divSeven.addEventListener('click', onPlayerMove)
 divEight.addEventListener('click', onPlayerMove)
+
+// module.exports = {
+//   gameBoard,
+//   lastTurn
+// }
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
