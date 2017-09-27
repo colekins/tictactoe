@@ -2,12 +2,13 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-const store = require('./store')
+// const store = require('./store')
+// const events = require('./events')
 
 $(() => {
   setAPIOrigin(location, config)
 })
-const gameBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+const gameBoard = ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8']
 let lastTurn = 'O'
 
 // each tictactoe square:
@@ -22,6 +23,31 @@ const divSeven = document.querySelector('#d7')
 const divEight = document.querySelector('#d8')
 // const gameSquare = document.querySelector('.col-xs-4')
 
+const updateBoard = function (divId) {
+  gameBoard.forEach(function (item, index) {
+    if (item === divId) {
+      gameBoard[index] = lastTurn
+    }
+  })
+  console.log(gameBoard)
+}
+
+const checkBoard = function () {
+  if (gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) {
+    console.log('scenario 1')
+  } else if (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5]) {
+    console.log('scenario 2')
+  } else if (gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8]) {
+    console.log('scenario 3')
+  } else if (gameBoard[0] === gameBoard[3] && gameBoard[3] === gameBoard[6]) {
+    console.log('scenario 4')
+  } else if (gameBoard[1] === gameBoard[4] && gameBoard[4] === gameBoard[7]) {
+    console.log('scenario 5')
+  } else if (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8]) {
+    console.log('scenario 6')
+  }
+}
+
 const onPlayerMove = function () {
   if (this.textContent === 'O' || this.textContent === 'X') {
     return undefined
@@ -32,6 +58,10 @@ const onPlayerMove = function () {
     this.textContent = 'O'
     lastTurn = 'O'
   }
+  const divId = this.id
+  updateBoard(divId)
+  checkBoard()
+  // console.log(this.id)
 }
 
 divZero.addEventListener('click', onPlayerMove)
