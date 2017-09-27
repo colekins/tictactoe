@@ -14,6 +14,7 @@ const signInSuccess = function (data) {
   console.log(data)
   $('#message').text('You are now signed in.')
   store.user = data.user
+  // console.log(store.user)
 }
 
 const signInFailure = function (error) {

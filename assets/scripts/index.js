@@ -79,7 +79,6 @@ const reset = function () {
     current.textContent = null
   }
   $('#message').text(' ')
-  console.log(gameBoard)
 }
 
 divZero.addEventListener('click', onPlayerMove)

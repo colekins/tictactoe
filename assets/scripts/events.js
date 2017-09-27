@@ -17,6 +17,7 @@ const onSignIn = function (event) {
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(unhideButton)
     .catch(ui.signInFailure)
 }
 
@@ -41,11 +42,16 @@ const unhide = function () {
   console.log(this.parentElement.parentElement.children[1])
 }
 
+const unhideButton = function () {
+  $('.hiddenButton').toggleClass('hidden unhidden')
+  // console.log(parentElement)
+}
+
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign-out').on('click', onSignOut)
   $('.toggle').on('click', unhide)
 }
 
