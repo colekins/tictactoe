@@ -32,23 +32,27 @@ const updateBoard = function (divId) {
   console.log(gameBoard)
 }
 
+const winGame = function () {
+  $('#message').text('Player ' + lastTurn + ' wins!!')
+}
+
 const checkBoard = function () {
   if (gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) {
-    console.log('scenario 1')
+    winGame()
   } else if (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5]) {
-    console.log('scenario 2')
+    winGame()
   } else if (gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8]) {
-    console.log('scenario 3')
+    winGame()
   } else if (gameBoard[0] === gameBoard[3] && gameBoard[3] === gameBoard[6]) {
-    console.log('scenario 4')
+    winGame()
   } else if (gameBoard[1] === gameBoard[4] && gameBoard[4] === gameBoard[7]) {
-    console.log('scenario 5')
+    winGame()
   } else if (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8]) {
-    console.log('scenario 6')
+    winGame()
   } else if (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) {
-    console.log('scenario 7')
+    winGame()
   } else if (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6]) {
-    console.log('scenario 8')
+    winGame()
   }
 }
 

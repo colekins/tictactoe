@@ -1,10 +1,10 @@
-// const indexJs = require('./index.js')
+const indexJs = require('./index.js')
 const gameBoard = indexJs.gameBoard
 
 const updateBoard = function (divId) {
   indexJs.gameBoard.forEach(function (item, index) {
     if (item === divId) {
-      gameBoard[index] = indexJs.lastTurn
+      indexJs.gameBoard[index] = indexJs.lastTurn
     }
   })
   console.log(gameBoard)

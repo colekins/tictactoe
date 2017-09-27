@@ -11,25 +11,43 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
+    <body class="container">
       <h1>Tic Tac Toe</h1>
+      <div id='message'></div>
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up:</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+  </form>
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign in:</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+</form>
       <br>
       <div class="container">
               <div class="row">
-                <div class="col-xs-4 col-md-4 box" id="d0"><span class="move"> </span></div>
-                <div class="col-xs-4 col-md-4 box" id="d1"><span class="move"> </span></div>
-                <div class="col-xs-4 col-md-4 box" id="d2"><span class="move"> </span></div>
+                <div class="col-xs-4 box" id="d0"><span class="move"> </span></div>
+                <div class="col-xs-4 box" id="d1"><span class="move"> </span></div>
+                <div class="col-xs-4 box" id="d2"><span class="move"> </span></div>
               </div>
               <!-- Columns are always 50% wide, on mobile and desktop -->
               <div class="row">
-                <div class="col-xs-4 col-md-4 box" id="d3"><span class="move"> </span></div>
-                <div class="col-xs-4 col-md-4 box" id="d4"><span class="move"> </span></div>
-                <div class="col-xs-4 col-md-4 box" id="d5"><span class="move"> </span></div>
+                <div class="col-xs-4 box" id="d3"><span class="move"> </span></div>
+                <div class="col-xs-4 box" id="d4"><span class="move"> </span></div>
+                <div class="col-xs-4 box" id="d5"><span class="move"> </span></div>
               </div>
             <div class="row">
-              <div class="col-xs-4 col-md-4 box" id="d6"><span class="move"> </span></div>
-              <div class="col-xs-4 col-md-4 box" id="d7"><span class="move"> </span></div>
-              <div class="col-xs-4 col-md-4 box" id="d8"><span class="move"> </span></div>
+              <div class="col-xs-4 box" id="d6"><span class="move"> </span></div>
+              <div class="col-xs-4 box" id="d7"><span class="move"> </span></div>
+              <div class="col-xs-4 box" id="d8"><span class="move"> </span></div>
             </div>
           </div>
     </body>
