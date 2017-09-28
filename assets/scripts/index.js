@@ -35,7 +35,14 @@ const winGame = function () {
   $('#message').text('Player ' + lastTurn + ' wins!!')
 }
 
+const draw = function () {
+  $('#message').text('Its a draw.')
+}
+
 const checkBoard = function () {
+  const xOrO = function (element) {
+    return element.length <= 1
+  }
   if (gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) {
     winGame()
   } else if (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5]) {
@@ -52,6 +59,8 @@ const checkBoard = function () {
     winGame()
   } else if (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6]) {
     winGame()
+  } else if (gameBoard.every(xOrO)) {
+    draw()
   }
 }
 
