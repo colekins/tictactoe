@@ -48,12 +48,12 @@ const signOutFail = function (error) {
 
 const onGetGameSuccess = function (data) {
   store.games = data.games
-  const gameList = []
+  $('#message').text('Welcome. You have played ' + store.games.length + ' games!')
   // console.log(store.games)
-  for (let i = 0; i < store.games.length; i++) {
-    gameList.push(store.games[i].id)
-    $('.gameSelector option:first').after('<option>' + store.games[i].id + '</option>')
-  }
+  // const gameList = []
+  // for (let i = 0; i < store.games.length; i++) {
+  //   gameList.push(store.games[i].id)
+  //   $('.gameSelector option:first').after('<option>' + store.games[i].id + '</option>')
 }
 
 // const onLoadGameSuccess = function (data) {
