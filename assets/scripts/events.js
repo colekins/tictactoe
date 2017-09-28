@@ -4,8 +4,8 @@ const ui = require('./ui')
 
 // const index = require('./index')
 
-const getGame = function () {
-  api.index()
+const getGames = function (data) {
+  api.index(data)
     .then(ui.onGetGameSuccess)
 }
 
@@ -61,6 +61,8 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .then(unhideSignOut)
     .then(hideSignIn)
+    .then(getGames)
+    .then(unhideGames)
     .catch(ui.signInFailure)
 }
 
@@ -91,6 +93,10 @@ const unhideSignOut = function () {
   $('.signOutButton').toggleClass('hidden unhidden')
   // console.log(parentElement)
 }
+const unhideGames = function () {
+  $('.gameSelector').toggleClass('hidden unhidden')
+  // console.log(parentElement)
+}
 const hideSignIn = function () {
   $('#sign-in').toggleClass('hidden unhidden')
   // console.log(parentElement)
@@ -107,7 +113,7 @@ const addHandlers = function () {
 module.exports = {
   addHandlers,
   updateGame,
-  getGame,
+  getGames,
   newGame,
   finishGame
 }

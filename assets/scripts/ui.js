@@ -45,7 +45,13 @@ const signOutFail = function (error) {
 
 const onGetGameSuccess = function (data) {
   store.games = data.games
-  store.thisGame = store.games[length]
+  const gameList = []
+  console.log(store.games)
+  for (let i = 0; i < store.games.length; i++) {
+    gameList.push(store.games[i].id)
+    $('.gameSelector option:first').after('<option>' + store.games[i].id + '</option>')
+  }
+  console.log(gameList)
 }
 
 const onCreateSuccess = function (data) {
