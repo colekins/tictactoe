@@ -43,6 +43,16 @@ const signOutFail = function (error) {
   $('#message').text('Failed to sign out.')
 }
 
+const onGetGameSuccess = function (data) {
+  store.games = data.games
+  store.thisGame = store.games[length]
+}
+
+const onCreateSuccess = function (data) {
+  store.thisGame = data.game
+  console.log(store.thisGame)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -51,5 +61,7 @@ module.exports = {
   passwordSuccess,
   passwordFail,
   signOutSuccess,
-  signOutFail
+  signOutFail,
+  onGetGameSuccess,
+  onCreateSuccess
 }

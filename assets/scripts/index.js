@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./events')
+const api = require('./api')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -27,6 +28,7 @@ const updateBoard = function (divId) {
     if (item === divId) {
       gameBoard[index] = lastTurn
     }
+    events.updateGame(gameBoard)
   })
   // console.log(gameBoard)
 }
@@ -87,6 +89,7 @@ const reset = function () {
     const current = document.querySelector('#d' + i)
     current.textContent = null
   }
+  events.newGame()
   $('#message').text(' ')
 }
 

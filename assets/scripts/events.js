@@ -1,7 +1,22 @@
 const getFormFields = require(`../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
+const index = require('./index')
 // const index = require('./index')
+
+const getGame = function () {
+  api.index()
+    .then(ui.onGetGameSuccess)
+}
+
+const newGame = function () {
+  api.create()
+    .then(ui.onCreateSuccess)
+}
+
+const updateGame = function (data) {
+  api.update(data)
+}
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -64,5 +79,8 @@ const addHandlers = function () {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  updateGame,
+  getGame,
+  newGame
 }
