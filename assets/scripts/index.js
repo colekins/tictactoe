@@ -33,7 +33,7 @@ const updateBoard = function (divId) {
       indexNum = index
     }
   })
-  if (store.thisGame !== undefined) {
+  if (store.user !== undefined) {
     events.updateGame(indexNum, lastTurn)
   }
   console.log(store.thisGame)
@@ -60,15 +60,7 @@ const draw = function () {
   if (store.thisGame !== undefined) {
     events.finishGame(indexNum, lastTurn)
   }
-  divZero.removeEventListener('click', onPlayerMove)
-  divOne.removeEventListener('click', onPlayerMove)
-  divTwo.removeEventListener('click', onPlayerMove)
-  divThree.removeEventListener('click', onPlayerMove)
-  divFour.removeEventListener('click', onPlayerMove)
-  divFive.removeEventListener('click', onPlayerMove)
-  divSix.removeEventListener('click', onPlayerMove)
-  divSeven.removeEventListener('click', onPlayerMove)
-  divEight.removeEventListener('click', onPlayerMove)
+  removeListeners()
 }
 
 const checkBoard = function () {
@@ -119,9 +111,14 @@ const reset = function () {
     const current = document.querySelector('#d' + i)
     current.textContent = null
   }
-  if (store.user !== undefined) {
+  if (store.user) {
     events.newGame()
   }
+  addListeners()
+  $('#message').text('Play!')
+}
+
+const addListeners = function () {
   divZero.addEventListener('click', onPlayerMove)
   divOne.addEventListener('click', onPlayerMove)
   divTwo.addEventListener('click', onPlayerMove)
@@ -131,18 +128,21 @@ const reset = function () {
   divSix.addEventListener('click', onPlayerMove)
   divSeven.addEventListener('click', onPlayerMove)
   divEight.addEventListener('click', onPlayerMove)
-  $('#message').text(' ')
 }
 
-divZero.addEventListener('click', onPlayerMove)
-divOne.addEventListener('click', onPlayerMove)
-divTwo.addEventListener('click', onPlayerMove)
-divThree.addEventListener('click', onPlayerMove)
-divFour.addEventListener('click', onPlayerMove)
-divFive.addEventListener('click', onPlayerMove)
-divSix.addEventListener('click', onPlayerMove)
-divSeven.addEventListener('click', onPlayerMove)
-divEight.addEventListener('click', onPlayerMove)
+const removeListeners = function () {
+  divZero.removeEventListener('click', onPlayerMove)
+  divOne.removeEventListener('click', onPlayerMove)
+  divTwo.removeEventListener('click', onPlayerMove)
+  divThree.removeEventListener('click', onPlayerMove)
+  divFour.removeEventListener('click', onPlayerMove)
+  divFive.removeEventListener('click', onPlayerMove)
+  divSix.removeEventListener('click', onPlayerMove)
+  divSeven.removeEventListener('click', onPlayerMove)
+  divEight.removeEventListener('click', onPlayerMove)
+}
+
+addListeners()
 
 // const displayGame = function (gameBoard) {
 //   for (let i = 0; i < gameBoard.length; i++) {
@@ -185,6 +185,7 @@ divEight.addEventListener('click', onPlayerMove)
 $(() => {
   events.addHandlers()
   $('.reset').on('click', reset)
+  $('#sign-out').on('click', reset)
   // $('.selectGame').on('click', loadGame)
 })
 

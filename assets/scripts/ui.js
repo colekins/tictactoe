@@ -37,7 +37,8 @@ const signOutSuccess = function () {
   $('#message').text('You are now signed out.')
   $('.selectorTitle').nextAll().remove()
   // $('.gameSelector').appendChild()
-  store.user = null
+  store.user = undefined
+  store.thisGame = undefined
   // console.log(store.user)
 }
 
@@ -48,7 +49,11 @@ const signOutFail = function (error) {
 
 const onGetGameSuccess = function (data) {
   store.games = data.games
-  $('#message').text('Welcome. You have played ' + store.games.length + ' games!')
+  if (store.games.length === 0) {
+    $('#message').text('You are now signed in.')
+  } else {
+    $('#message').text('Welcome. You have played ' + store.games.length + ' games!')
+  }
   // console.log(store.games)
   // const gameList = []
   // for (let i = 0; i < store.games.length; i++) {
