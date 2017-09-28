@@ -35,7 +35,7 @@ const signOutSuccess = function () {
   console.log('Signed Out')
   $('#message').text('You are now signed out.')
   store.user = null
-  console.log(store.user)
+  // console.log(store.user)
 }
 
 const signOutFail = function (error) {
@@ -52,10 +52,6 @@ const onCreateSuccess = function (data) {
   store.thisGame = data.game
   console.log(store.thisGame)
 }
-
-// const onUpdateSuccess = function (data) {
-//   store.thisGame = data.game
-// }
 
 module.exports = {
   signUpSuccess,

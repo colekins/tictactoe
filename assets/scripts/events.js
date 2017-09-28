@@ -27,6 +27,22 @@ const updateGame = function (indexNum, lastTurn) {
   data.game.cell.index = indexNum
   data.game.cell.value = lastTurn
   api.update(data)
+    .then(ui.onCreateSuccess)
+}
+const finishGame = function (indexNum, lastTurn) {
+  const data = {
+    game: {
+      cell: {
+        index: '',
+        value: ''
+      },
+      over: true
+    }
+  }
+  data.game.cell.index = indexNum
+  data.game.cell.value = lastTurn
+  api.update(data)
+    .then(ui.onCreateSuccess)
 }
 
 const onSignUp = function (event) {
@@ -38,7 +54,6 @@ const onSignUp = function (event) {
     .catch(ui.signUpFailure)
 }
 
-let signCalled = false
 const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
@@ -46,7 +61,6 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .then(unhideSignOut)
     .then(hideSignIn)
-    .then(signCalled = true)
     .catch(ui.signInFailure)
 }
 
@@ -59,7 +73,6 @@ const onChangePassword = function (event) {
 }
 
 const onSignOut = function (event) {
-  // const data = getFormFields(this)
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
@@ -96,5 +109,5 @@ module.exports = {
   updateGame,
   getGame,
   newGame,
-  signCalled
+  finishGame
 }
