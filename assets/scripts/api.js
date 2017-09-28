@@ -61,12 +61,12 @@ const create = function (data) {
 
 const update = function (data) {
   return $.ajax({
-    url: config.apiOrigin + 'games/' + this.game.id,
+    url: config.apiOrigin + 'games/' + store.thisGame.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data
   })
 }
 

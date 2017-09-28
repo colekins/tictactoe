@@ -3,7 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./events')
-const api = require('./api')
+// const api = require('./api')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -23,18 +23,31 @@ const divSeven = document.querySelector('#d7')
 const divEight = document.querySelector('#d8')
 // const gameSquare = document.querySelector('.col-xs-4')
 
+let indexNum = ''
+
 const updateBoard = function (divId) {
   gameBoard.forEach(function (item, index) {
     if (item === divId) {
       gameBoard[index] = lastTurn
+      indexNum = index
     }
-    events.updateGame(gameBoard)
   })
-  // console.log(gameBoard)
+  if (events.signCalled === true) {
+    events.updateGame(indexNum, lastTurn)
+  }
 }
 
 const winGame = function () {
   $('#message').text('Player ' + lastTurn + ' wins!!')
+  divZero.removeEventListener('click', onPlayerMove)
+  divOne.removeEventListener('click', onPlayerMove)
+  divTwo.removeEventListener('click', onPlayerMove)
+  divThree.removeEventListener('click', onPlayerMove)
+  divFour.removeEventListener('click', onPlayerMove)
+  divFive.removeEventListener('click', onPlayerMove)
+  divSix.removeEventListener('click', onPlayerMove)
+  divSeven.removeEventListener('click', onPlayerMove)
+  divEight.removeEventListener('click', onPlayerMove)
 }
 
 const draw = function () {
@@ -108,9 +121,9 @@ $(() => {
   $('.reset').on('click', reset)
 })
 
-// module.exports = {
-//   reset
-// }
+module.exports = {
+  reset
+}
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')

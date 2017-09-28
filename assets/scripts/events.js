@@ -1,7 +1,7 @@
 const getFormFields = require(`../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
-const index = require('./index')
+
 // const index = require('./index')
 
 const getGame = function () {
@@ -14,7 +14,18 @@ const newGame = function () {
     .then(ui.onCreateSuccess)
 }
 
-const updateGame = function (data) {
+const updateGame = function (indexNum, lastTurn) {
+  const data = {
+    game: {
+      cell: {
+        index: '',
+        value: ''
+      },
+      over: false
+    }
+  }
+  data.game.cell.index = indexNum
+  data.game.cell.value = lastTurn
   api.update(data)
 }
 
@@ -27,6 +38,7 @@ const onSignUp = function (event) {
     .catch(ui.signUpFailure)
 }
 
+let signCalled = false
 const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
@@ -34,6 +46,7 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .then(unhideSignOut)
     .then(hideSignIn)
+    .then(signCalled = true)
     .catch(ui.signInFailure)
 }
 
@@ -82,5 +95,6 @@ module.exports = {
   addHandlers,
   updateGame,
   getGame,
-  newGame
+  newGame,
+  signCalled
 }

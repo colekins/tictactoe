@@ -53,6 +53,10 @@ const onCreateSuccess = function (data) {
   console.log(store.thisGame)
 }
 
+// const onUpdateSuccess = function (data) {
+//   store.thisGame = data.game
+// }
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
