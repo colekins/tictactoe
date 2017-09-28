@@ -47,6 +47,7 @@ h1 {
   max-width: 1300px;
   text-align: center;
   margin: 0 23%;
+  margin-bottom: 10%
 }
 
 .game{
@@ -64,6 +65,7 @@ h1 {
   font-size: 20px;
   padding: 7px;
   font-weight: bold;
+  margin-bottom: 7px;
 }
 
 @media (max-width: 1030px) {
@@ -86,7 +88,7 @@ h1 {
 @media (max-width: 380px) {
   .game {
     font-size: 35px;
-    margin: 0 12%;
+    margin: 0 8%;
  }
   }
 
@@ -107,4 +109,5 @@ font-size: 14px;
 
 .gameSelector {
   margin: auto;
+  display: inline;
 }

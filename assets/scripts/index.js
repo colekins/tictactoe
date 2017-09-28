@@ -5,6 +5,7 @@ const config = require('./config')
 const events = require('./events')
 const store = require('./store')
 const api = require('./api')
+const ui = require('./ui')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -143,13 +144,68 @@ divSix.addEventListener('click', onPlayerMove)
 divSeven.addEventListener('click', onPlayerMove)
 divEight.addEventListener('click', onPlayerMove)
 
+const displayGame = function (gameBoard) {
+  for (let i = 0; i < gameBoard.length; i++) {
+    if (gameBoard[i] === undefined) {
+      gameBoard[i] = 'd' + [i]
+    }
+  } if (gameBoard[0] !== 'd0') {
+    divZero.textContent = gameBoard[0]
+  } if (gameBoard[1] !== 'd1') {
+    divOne.textContent = gameBoard[1]
+  } if (gameBoard[2] !== 'd2') {
+    divTwo.textContent = gameBoard[2]
+  } if (gameBoard[3] !== 'd3') {
+    divThree.textContent = gameBoard[3]
+  } if (gameBoard[4] !== 'd4') {
+    divFour.textContent = gameBoard[4]
+  } if (gameBoard[5] !== 'd5') {
+    divFive.textContent = gameBoard[5]
+  } if (gameBoard[6] !== 'd6') {
+    divSix.textContent = gameBoard[6]
+  } if (gameBoard[7] !== 'd7') {
+    divSeven.textContent = gameBoard[7]
+  } if (gameBoard[8] !== 'd8') {
+    divThree.textContent = gameBoard[8]
+  }
+  // divOne.textContent = gameBoard[1]
+  // divTwo.textContent = gameBoard[2]
+  // divThree.textContent = gameBoard[3]
+  // divFour.textContent = gameBoard[4]
+  // divFive.textContent = gameBoard[5]
+  // divSix.textContent = gameBoard[6]
+  // divSeven.textContent = gameBoard[7]
+  // divEight.textContent = gameBoard[8]
+}
+const loadGameSuccess = function (data) {
+  store.thisGame = data
+  gameBoard = data.game.cells
+  displayGame(gameBoard)
+}
+
+const loadGame = function () {
+  reset()
+  const value = $('.gameSelector').val()
+  api.indexGame(value)
+    .then(loadGameSuccess)
+  // for (let i = 0; i < gameBoard.length; i++) {
+  //   if (gameBoard[i] === undefined) {
+  //     gameBoard[i] = 'd' + [i]
+  //   } else return gameBoard
+  // }
+  // displayGame(gameBoard)
+}
+
 $(() => {
   events.addHandlers()
   $('.reset').on('click', reset)
+  $('.selectGame').on('click', loadGame)
 })
 
 module.exports = {
-  reset
+  reset,
+  gameBoard,
+  displayGame
 }
 
 // use require with a reference to bundle the file and use it in this file

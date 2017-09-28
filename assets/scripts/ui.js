@@ -1,4 +1,5 @@
 const store = require('./store')
+// const main = require('./index')
 
 const signUpSuccess = function (data) {
   console.log(data)
@@ -48,13 +49,17 @@ const signOutFail = function (error) {
 const onGetGameSuccess = function (data) {
   store.games = data.games
   const gameList = []
-  console.log(store.games)
+  // console.log(store.games)
   for (let i = 0; i < store.games.length; i++) {
     gameList.push(store.games[i].id)
     $('.gameSelector option:first').after('<option>' + store.games[i].id + '</option>')
   }
-  console.log(gameList)
 }
+
+// const onLoadGameSuccess = function (data) {
+//   store.thisGame = data
+//   // console.log(store.thisGame)
+// }
 
 const onCreateSuccess = function (data) {
   store.thisGame = data.game
@@ -72,4 +77,5 @@ module.exports = {
   signOutFail,
   onGetGameSuccess,
   onCreateSuccess
+  // onLoadGameSuccess
 }

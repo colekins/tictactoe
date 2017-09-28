@@ -49,6 +49,16 @@ const index = function (data) {
   })
 }
 
+const indexGame = function (value) {
+  return $.ajax({
+    url: config.apiOrigin + 'games/' + value,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const create = function (data) {
   return $.ajax({
     url: config.apiOrigin + 'games',
@@ -77,5 +87,6 @@ module.exports = {
   signOut,
   index,
   create,
-  update
+  update,
+  indexGame
 }

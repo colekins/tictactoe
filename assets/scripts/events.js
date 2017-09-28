@@ -1,7 +1,7 @@
 const getFormFields = require(`../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
-
+const store = require('./store')
 // const index = require('./index')
 
 const getGames = function (data) {
@@ -44,6 +44,19 @@ const finishGame = function (indexNum, lastTurn) {
   api.update(data)
     .then(ui.onCreateSuccess)
 }
+
+// const loadGameEvent = function (data) {
+//   const value = $('.gameSelector').val()
+//   api.indexGame(value)
+//     .then(ui.onLoadGameSuccess)
+// }
+
+// const onLoadGameSuccess = function (data) {
+//   store.thisGame = data.game
+//   // console.log(store.thisGame)
+//   // const board = store.thisGame.cells
+//   // index.displayGame(board)
+// }
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -117,4 +130,5 @@ module.exports = {
   getGames,
   newGame,
   finishGame
+  // loadGameEvent
 }
