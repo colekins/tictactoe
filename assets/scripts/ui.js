@@ -34,6 +34,8 @@ const passwordFail = function (error) {
 const signOutSuccess = function () {
   console.log('Signed Out')
   $('#message').text('You are now signed out.')
+  $('.selectorTitle').nextAll().remove()
+  // $('.gameSelector').appendChild()
   store.user = null
   // console.log(store.user)
 }

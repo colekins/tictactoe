@@ -80,6 +80,7 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .then(hideSignIn)
     .then(unhideSignOut)
+    .then(unhideGames)
     .then(document.getElementById('sign-in').reset())
     .catch(ui.signOutFail)
 }
