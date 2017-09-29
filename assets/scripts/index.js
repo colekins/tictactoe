@@ -33,7 +33,8 @@ const updateBoard = function (divId) {
       indexNum = index
     }
   })
-  if (store.user.token) {
+  // console.log(store.user)
+  if (store.user && store.user.token) {
     events.updateGame(indexNum, lastTurn)
   }
   // console.log(store.thisGame)
@@ -42,7 +43,7 @@ const updateBoard = function (divId) {
 const winGame = function () {
   $('#message').text('Player ' + lastTurn + ' wins!!')
   // console.log(store.user)
-  if (store.user.token) {
+  if (store.user) {
     events.finishGame(indexNum, lastTurn)
   }
   divZero.removeEventListener('click', onPlayerMove)
