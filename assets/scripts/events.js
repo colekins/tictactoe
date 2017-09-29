@@ -64,6 +64,8 @@ const onSignUp = function (event) {
   event.preventDefault()
   api.signUp(data)
     .then(ui.signUpSuccess)
+    .then(document.getElementById('sign-up').reset())
+    .then(hideSignUp)
     .catch(ui.signUpFailure)
 }
 
@@ -84,6 +86,8 @@ const onChangePassword = function (event) {
   event.preventDefault()
   api.changePassword(data)
     .then(ui.passwordSuccess)
+    .then(document.getElementById('change-password').reset())
+    .then(hidePass)
     .catch(ui.passwordFail)
 }
 
@@ -113,6 +117,16 @@ const unhideGames = function () {
 }
 const hideSignIn = function () {
   $('#sign-in').toggleClass('hidden unhidden')
+  // console.log(parentElement)
+}
+
+const hideSignUp = function () {
+  $('.signUpForm').toggleClass('hidden unhidden')
+  // console.log(parentElement)
+}
+
+const hidePass = function () {
+  $('.passForm').toggleClass('hidden unhidden')
   // console.log(parentElement)
 }
 
