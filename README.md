@@ -20,7 +20,8 @@ Game planning began with a high-level wireframe of the SPA layout and appearance
 
 I had begun working on a "saved games" dropdown menu that appears after the user signed in. I got as far as allowing the user to load up a previously saved and unfinished game onto the game-board. However, once this loaded- the game logic was no longer functioning properly. I decided to pull out these elements for now since they were not fully functional. If I have time I would like to work on this again.
 
-[Wireframes](https://i.imgur.com/PvzoAKu.jpg)
+[Initial Wireframes](https://i.imgur.com/PvzoAKu.jpg)
+
 Early user stories:
 - "As a user, I want to be able to sign in with a unique username/password."
 - "As a user, I want to be able to save my games"
