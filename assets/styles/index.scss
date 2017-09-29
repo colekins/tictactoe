@@ -71,11 +71,11 @@ h1 {
 @media (max-width: 1550px) {
   .gameArea {
     font-size: 35px;
-    margin: 0 0% 0 25%;
+    margin: 0 0% 0 20%;
   }
  }
 
-@media (max-width: 1030px) {
+@media (max-width: 1130px) {
   .col-xs-4 {
     height: 15vw;
     width: 15vw;
@@ -90,6 +90,10 @@ h1 {
   .game {
     font-size: 35px;
  }
+ .gameArea {
+   margin-bottom: 1%;
+  //  margin: 0 5%
+ }
   }
 
 @media (max-width: 400px) {
@@ -98,8 +102,8 @@ h1 {
     margin: 0 5%;
  }
   .col-xs-4 {
-    height: 9vw;
-    width: 9vw;
+    height: 15vw;
+    width: 15vw;
 }
 
   }
