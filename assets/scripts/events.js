@@ -80,6 +80,7 @@ const onSignIn = function (event) {
     .then(unhideGames)
     .then(showPassBtn)
     .then(hideSignUpBtn)
+    .then(newGame)
     .catch(ui.signInFailure)
 }
 
@@ -108,7 +109,7 @@ const onSignOut = function (event) {
 
 const unhide = function () {
   $(this.parentElement.parentElement.children[1]).toggleClass('hidden unhidden')
-  console.log(this.parentElement.parentElement.children[1])
+  // console.log(this.parentElement.parentElement.children[1])
 }
 
 const unhideSignOut = function () {

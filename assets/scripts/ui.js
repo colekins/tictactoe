@@ -8,11 +8,11 @@ const signUpSuccess = function (data) {
 
 const signUpFailure = function (error) {
   console.error(error)
-  $('#message').text('Error on sign up.')
+  $('#message').text('Error. Please try again.')
 }
 
 const signInSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#message').text('You are now signed in.')
   store.user = data.user
   // console.log(store.user)
@@ -67,7 +67,7 @@ const onGetGameSuccess = function (data) {
 
 const onCreateSuccess = function (data) {
   store.thisGame = data.game
-  console.log(store.thisGame)
+  // console.log(store.thisGame)
 }
 
 module.exports = {
