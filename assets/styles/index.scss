@@ -44,10 +44,10 @@ h1 {
 }
 
 .gameArea {
+  margin: 0 23.7%;
+  margin-bottom: 7%;
   max-width: 1300px;
   text-align: center;
-  margin: 0 23.7%;
-  margin-bottom: 7%
 }
 
 .game{
@@ -63,9 +63,9 @@ h1 {
   background-color: $messagebanner-color;
   color: $message-color;
   font-size: 20px;
-  padding: 7px;
   font-weight: bold;
   margin-bottom: 7px;
+  padding: 7px;
 }
 
 @media (max-width: 1550px) {
@@ -100,12 +100,13 @@ h1 {
   }
 
 .toggle {
-font-size: 14px;
+  font-size: 14px;
 }
 
 .hidden {
   display: none;
 }
+
 .unhidden {
   display: block;
 }
@@ -115,6 +116,6 @@ font-size: 14px;
 }
 
 .gameSelector {
-  margin: auto;
   display: inline;
+  margin: auto;
 }
