@@ -43,7 +43,7 @@ const updateBoard = function (divId) {
 const winGame = function () {
   $('#message').text('Player ' + lastTurn + ' wins!!')
   // console.log(store.user)
-  if (store.user) {
+  if (store.user && store.user.token) {
     events.finishGame(indexNum, lastTurn)
   }
   divZero.removeEventListener('click', onPlayerMove)
