@@ -4,20 +4,23 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: #fff;
 $font-color: #000;
 $border-color: #000;
-$hover-color: #ddeffc;
-$messagebanner-color: #f4fafe;
-$message-color: #2f4f4f;
+$hover-color: #e1f8f3;
+$messagebanner-color: #1190c9;
+$message-color: #fff;
 $titlebanner-color: #c5e5fa;
 
 body {
   background-color: $background-color;
   color: $font-color;
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 h1 {
   background-color: $titlebanner-color;
   color: $font-color;
+  font-family: 'Pacifico', cursive;
+  font-weight: 600;
   padding: 10px 0;
 }
 
@@ -28,6 +31,7 @@ h1 {
 .col-xs-4 {
   height: 10.7vw;
   width: 10.7vw;
+  font-weight: bolder;
   // max-width: 200px;
   // max-height: 200px;
   // height: 100%;
@@ -68,6 +72,12 @@ h1 {
   padding: 7px;
 }
 
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 60px;
+  }
+}
+
 @media (max-width: 1550px) {
   .gameArea {
     font-size: 35px;
@@ -98,13 +108,16 @@ h1 {
 
 @media (max-width: 400px) {
   .game {
-    font-size: 30px;
+    font-size: 25px;
     margin: 0 5%;
  }
   .col-xs-4 {
-    height: 15vw;
-    width: 15vw;
+    height: 19vw;
+    width: 19vw;
 }
+  .gameArea {
+    margin: 0 3%;
+  }
 
   }
 

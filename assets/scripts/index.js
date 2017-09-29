@@ -33,7 +33,7 @@ const updateBoard = function (divId) {
       indexNum = index
     }
   })
-  // console.log(store.user)
+
   if (store.user && store.user.token) {
     events.updateGame(indexNum, lastTurn)
   }
@@ -113,11 +113,12 @@ const reset = function () {
     const current = document.querySelector('#d' + i)
     current.textContent = null
   }
+  addListeners()
+  $('#message').text('Play!')
+
   if (store.user.token) {
     events.newGame()
   }
-  addListeners()
-  $('#message').text('Play!')
 }
 
 const addListeners = function () {

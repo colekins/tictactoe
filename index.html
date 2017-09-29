@@ -6,13 +6,16 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
   <body class="container">
-      <div class="banner"><h1>Tic Tac Toe</h1></div>
+      <div class="banner"><h1>Tic-Tac-Toe</h1></div>
       <div class="message"id='message'></div>
       <!-- <select class="hidden gameSelector">
               <option class="selectorTitle"value="title">Saved Games</option>
@@ -28,12 +31,12 @@
             </fieldset>
       </form></div>
       <br>
-      <input type="submit" class="hidden signOutButton btn-primary" id="sign-out" value="Sign out">
+      <input type="submit" class="hidden signOutButton btn-primary" id="sign-out" value="Sign Out">
     </div>
       <div class="row">
-      <div class="col-xs-6"><form id="sign-up">
+      <div class="col-xs-12 unhidden signBtn"><form id="sign-up">
         <fieldset>
-          <legend><a class="toggle" href="#">Sign up</a></legend>
+          <legend><a class="toggle" href="#">Sign Up</a></legend>
           <div class="hidden signUpForm">
             <input type="text" name="credentials[email]" placeholder="Email">
             <input type="password" name="credentials[password]" placeholder="Password">
@@ -42,7 +45,7 @@
         </div>
         </fieldset>
   </form></div>
-  <div class="col-xs-6"><form id="change-password">
+  <div class="col-xs-12 hidden passBtn"><form id="change-password">
       <fieldset>
         <legend><a class="toggle" href="#">Change Password</a></legend>
         <div class="hidden passForm">
