@@ -59,7 +59,7 @@ const winGame = function () {
 
 const draw = function () {
   $('#message').text('Its a draw.')
-  if (store.thisGame !== undefined) {
+  if (store.user && store.user.token) {
     events.finishGame(indexNum, lastTurn)
   }
   removeListeners()
@@ -116,7 +116,7 @@ const reset = function () {
   addListeners()
   $('#message').text('Play!')
 
-  if (store.user.token) {
+  if (store.user && store.user.token) {
     events.newGame()
   }
 }
