@@ -4,7 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./events')
 const store = require('./store')
-const api = require('./api')
+// const api = require('./api')
 // const ui = require('./ui')
 
 $(() => {
@@ -33,15 +33,16 @@ const updateBoard = function (divId) {
       indexNum = index
     }
   })
-  if (store.user !== undefined) {
+  if (store.user.token) {
     events.updateGame(indexNum, lastTurn)
   }
-  console.log(store.thisGame)
+  // console.log(store.thisGame)
 }
 
 const winGame = function () {
   $('#message').text('Player ' + lastTurn + ' wins!!')
-  if (store.thisGame !== undefined) {
+  // console.log(store.user)
+  if (store.user.token) {
     events.finishGame(indexNum, lastTurn)
   }
   divZero.removeEventListener('click', onPlayerMove)
@@ -111,7 +112,7 @@ const reset = function () {
     const current = document.querySelector('#d' + i)
     current.textContent = null
   }
-  if (store.user) {
+  if (store.user.token) {
     events.newGame()
   }
   addListeners()
