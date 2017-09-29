@@ -45,19 +45,6 @@ const finishGame = function (indexNum, lastTurn) {
     .then(ui.onCreateSuccess)
 }
 
-// const loadGameEvent = function (data) {
-//   const value = $('.gameSelector').val()
-//   api.indexGame(value)
-//     .then(ui.onLoadGameSuccess)
-// }
-
-// const onLoadGameSuccess = function (data) {
-//   store.thisGame = data.game
-//   // console.log(store.thisGame)
-//   // const board = store.thisGame.cells
-//   // index.displayGame(board)
-// }
-
 const onSignUp = function (event) {
   const data = getFormFields(this)
   // console.log(data)
@@ -152,6 +139,19 @@ const addHandlers = function () {
   $('#sign-out').on('click', onSignOut)
   $('.toggle').on('click', unhide)
 }
+
+// const loadGameEvent = function (data) {
+//   const value = $('.gameSelector').val()
+//   api.indexGame(value)
+//     .then(ui.onLoadGameSuccess)
+// }
+
+// const onLoadGameSuccess = function (data) {
+//   store.thisGame = data.game
+//   // console.log(store.thisGame)
+//   // const board = store.thisGame.cells
+//   // index.displayGame(board)
+// }
 
 module.exports = {
   addHandlers,

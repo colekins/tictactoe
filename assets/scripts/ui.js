@@ -24,12 +24,12 @@ const signInFailure = function (error) {
 }
 const passwordSuccess = function () {
   console.log('Success')
-  $('#message').text('Success.')
+  $('#message').text('Password changed successfully.')
 }
 
 const passwordFail = function (error) {
   console.error(error)
-  $('#message').text('Fail.')
+  $('#message').text('Error. Please try again.')
 }
 
 const signOutSuccess = function () {

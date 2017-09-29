@@ -72,7 +72,7 @@ h1 {
   color: $message-color;
   font-size: 18.9px;
   margin-bottom: 7px;
-  padding: 3px;
+  padding: 5px;
 }
 
 @media (min-width: 1000px) {
@@ -109,13 +109,13 @@ h1 {
 }
 
   .gameArea {
-    margin: 0 0% 0 25%;
+    margin: 0 25%;
 }
  }
 
 @media (max-width: 550px) {
   .game {
-    font-size: 45px;
+    font-size: 40px;
  }
  .gameArea {
    margin-bottom: 1%;
@@ -126,7 +126,7 @@ h1 {
 @media (max-width: 400px) {
   .game {
     font-size: 25px;
-    margin: 0 5%;
+    margin: 0 8%;
  }
   .col-xs-4 {
     height: 19vw;
@@ -152,6 +152,10 @@ h1 {
 
 .signOutButton {
   margin: auto;
+}
+
+.passBtn {
+  padding: 0 0 4px 0
 }
 
 .gameSelector {

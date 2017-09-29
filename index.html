@@ -31,8 +31,18 @@
             </fieldset>
       </form></div>
       <br>
-      <input type="submit" class="hidden signOutButton btn-primary" id="sign-out" value="Sign Out">
+      <div class="col-xs-12 hidden passBtn"><form id="change-password">
+          <fieldset>
+            <legend><a class="toggle" href="#">Change Password</a></legend>
+            <div class="hidden passForm">
+              <input type="password" name="passwords[old]" placeholder="Current Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
+              <input type="submit" name="submit" class="btn-primary" value="Change Password">
+            </div>
+          </fieldset>
+      </form></div>
     </div>
+    <input type="submit" class="hidden signOutButton btn-primary" id="sign-out" value="Sign Out">
       <div class="row">
       <div class="col-xs-12 unhidden signBtn"><form id="sign-up">
         <fieldset>
@@ -44,16 +54,6 @@
             <input type="submit" name="submit" class="button btn-primary" value="Sign up!">
         </div>
         </fieldset>
-  </form></div>
-  <div class="col-xs-12 hidden passBtn"><form id="change-password">
-      <fieldset>
-        <legend><a class="toggle" href="#">Change Password</a></legend>
-        <div class="hidden passForm">
-          <input type="password" name="passwords[old]" placeholder="Current Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" name="submit" class="btn-primary" value="Change Password">
-        </div>
-      </fieldset>
   </form></div>
 </div>
       <button type="button" class="btn-primary reset">New Game</button>
