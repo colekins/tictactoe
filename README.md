@@ -1,61 +1,34 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
-
-# browser-template
+# Tic Tac Toe
 
 A template for starting front-end projects. Webpack for `require` system, build
 pipeline, and development server. Boostrap and Handlebars.js included. No
 front-end frameworks included.
 
-## Installation
+## Game
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
-1.  Move into the new project and `git init`
-1.  Add all of the files in your project with the command `git add -A`
-  -   *Note:* THIS IS THE ONLY TIME YOU SHOULD RUN THIS COMMAND
-1.  Commit all of your files with the command `git commit`
-  -   Your commit title should read `Initial commit`
-1.  Install dependencies with `npm install`.
+[Live Game:](https://colekins.github.io/tictactoe/) hosted on GitHub Pages.
 
-## Structure
+## Technologies
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+### Game utilizes:
 
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
+  1. HTML
+  2. CSS
+  3. SASS
+  4. Bootstrap
+  5. Javascript
+  6. jQuery
+  7. AJAX calls to external API.
+  8. Webpack (require system)
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
+## Planning & Development
+Game planning began with a high-level wireframe of the SPA layout and appearance. During development, my main strategy was to break down larger regions of the project into smaller tasks. The main areas, after setting up an HTML/CSS environment were the Game Engine, User Authentication, and API communication. I faced the most challenges within the final stages of the project, but learned some valuable lessons along the way. I know now that it's crucial to work very methodically right from the start, so that you fully consider any implications of how you're setting up the initial code and control flow. I faced some issues with the creation of game API functions later on due to a lack of separation of concerns within some of the JS files. Ultimately I was able to work around these roadblocks, but I think I caused myself uncecessary headaches. I also faced some inital issues with CSS/bootsrap, mostly in the realm with box-alignment. This is still not set up in an ideal way and I am continuing to tinker with it. I'm finding that sometimes certain CSS changes do not reflect on the page in the way I'm expecting.
 
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
+I had begun working on a "saved games" dropdown menu that appears after the user signed in. I got as far as allowing the user to load up a previously saved and unfinished game onto the game-board. However, once this loaded- the game logic was no longer functioning properly. I decided to pull out these elements for now since they were not fully functional. If I have time I would like to work on this again.
 
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## [License](LICENSE)
-
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+[Wireframes](https://i.imgur.com/PvzoAKu.jpg)
+Early user stories:
+- "As a user, I want to be able to sign in with a unique username/password."
+- "As a user, I want to be able to save my games"
+- "As a user, I want to practice against myself"
+- "As a user, I want to retrieve previously saved games"
