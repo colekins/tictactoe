@@ -94,9 +94,14 @@ h1 {
 
 @media (max-width: 400px) {
   .game {
-    font-size: 35px;
+    font-size: 30px;
     margin: 0 5%;
  }
+  .col-xs-4 {
+    height: 9vw;
+    width: 9vw;
+}
+
   }
 
 .toggle {
