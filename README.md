@@ -1,11 +1,5 @@
 # Tic Tac Toe
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
-
-## Game
-
 [Live Game:](https://colekins.github.io/tictactoe/) hosted on GitHub Pages.
 
 ## Technologies
