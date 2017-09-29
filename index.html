@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
   <body class="container">
-      <h1>Tic Tac Toe</h1>
+      <div class="banner"><h1>Tic Tac Toe</h1></div>
       <div class="message"id='message'></div>
       <!-- <select class="hidden gameSelector">
               <option class="selectorTitle"value="title">Saved Games</option>
@@ -24,11 +24,11 @@
               <legend>Sign in:</legend>
                 <input type="text" name="credentials[email]" placeholder="Email">
                 <input type="password" name="credentials[password]" placeholder="Password">
-                <input type="submit" name="submit" value="Sign in">
+                <input type="submit" name="submit" class="btn-primary" value="Sign in">
             </fieldset>
       </form></div>
       <br>
-      <input type="submit" class="hidden signOutButton" id="sign-out" value="Sign out">
+      <input type="submit" class="hidden signOutButton btn-primary" id="sign-out" value="Sign out">
     </div>
       <div class="row">
       <div class="col-xs-6"><form id="sign-up">
@@ -38,7 +38,7 @@
             <input type="text" name="credentials[email]" placeholder="Email">
             <input type="password" name="credentials[password]" placeholder="Password">
             <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-            <input type="submit" name="submit" value="Sign up!">
+            <input type="submit" name="submit" class="button btn-primary" value="Sign up!">
         </div>
         </fieldset>
   </form></div>
@@ -48,12 +48,12 @@
         <div class="hidden passForm">
           <input type="password" name="passwords[old]" placeholder="Current Password">
           <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" name="submit" value="Change Password">
+          <input type="submit" name="submit" class="btn-primary" value="Change Password">
         </div>
       </fieldset>
   </form></div>
 </div>
-      <button type="button" class="reset">New Game</button>
+      <button type="button" class="btn-primary reset">New Game</button>
             <br>
 <div class="container gameArea">
         <div class="row game text-center">
