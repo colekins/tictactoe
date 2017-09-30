@@ -145,7 +145,9 @@ const removeListeners = function () {
   divEight.removeEventListener('click', onPlayerMove)
 }
 
+// if (store.user && store.user.token) {
 addListeners()
+// }
 
 // const displayGame = function (gameBoard) {
 //   for (let i = 0; i < gameBoard.length; i++) {

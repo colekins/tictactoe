@@ -68,6 +68,7 @@ const onSignIn = function (event) {
     .then(showPassBtn)
     .then(hideSignUpBtn)
     .then(newGame)
+    .then(showGame)
     .catch(ui.signInFailure)
 }
 
@@ -90,6 +91,7 @@ const onSignOut = function (event) {
     .then(unhideGames)
     .then(showPassBtn)
     .then(hideSignUpBtn)
+    .then(showGame)
     .then(document.getElementById('sign-in').reset())
     .catch(ui.signOutFail)
 }
@@ -129,6 +131,11 @@ const showPassBtn = function () {
 
 const hideSignUpBtn = function () {
   $('.signBtn').toggleClass('hidden unhidden')
+  // console.log(parentElement)
+}
+
+const showGame = function () {
+  $('.untilSignIn').toggleClass('hidden unhidden')
   // console.log(parentElement)
 }
 
