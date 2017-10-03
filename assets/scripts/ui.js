@@ -2,7 +2,7 @@ const store = require('./store')
 // const main = require('./index')
 
 const signUpSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#message').text('You are now signed up!')
 }
 
