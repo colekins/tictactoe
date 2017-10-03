@@ -36,10 +36,6 @@ h1 {
   height: 10.7vw;
   width: 10.7vw;
   font-weight: bolder;
-  // max-width: 200px;
-  // max-height: 200px;
-  // height: 100%;
-  // width: 100%;
 }
 
 // .col-md-4 {
@@ -86,12 +82,12 @@ h1 {
   }
  }
 
-@media (max-width: 1550px) {
-  .gameArea {
-    font-size: 35px;
-    margin: 0 0% 0 26%;
-  }
- }
+// @media (max-width: 1550px) {
+//   .gameArea {
+//     font-size: 35px;
+//     margin: 0 0% 0 26%;
+//   }
+//  }
  @media (max-width: 1550px) {
    .gameArea {
      margin: 0 0% 0 29%;
