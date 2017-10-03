@@ -6,8 +6,8 @@ const signUpSuccess = function (data) {
   $('#message').text('You are now signed up!')
 }
 
-const signUpFailure = function (error) {
-  console.error(error)
+const signUpFailure = function () {
+  // console.error(error)
   $('#message').text('Error. Please try again.')
 }
 
@@ -23,12 +23,12 @@ const signInFailure = function (error) {
   $('#message').text('Incorrect username or password.')
 }
 const passwordSuccess = function () {
-  console.log('Success')
+  // console.log('Success')
   $('#message').text('Password changed successfully.')
 }
 
-const passwordFail = function (error) {
-  console.error(error)
+const passwordFail = function () {
+  // console.error(error)
   $('#message').text('Error. Please try again.')
 }
 
@@ -41,8 +41,8 @@ const signOutSuccess = function () {
   // console.log(store.user)
 }
 
-const signOutFail = function (error) {
-  console.error(error)
+const signOutFail = function () {
+  // console.error(error)
   $('#message').text('Failed to sign out.')
 }
 
@@ -52,6 +52,8 @@ const onGetGameSuccess = function (data) {
     $('#message').text('You are now signed in.')
   } else {
     $('#message').text('Welcome. You have played ' + store.games.length + ' games!')
+    // console.log(store.games)
+    // console.log(store.games.length)
   }
   // console.log(store.games)
   // const gameList = []
