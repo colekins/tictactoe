@@ -33,7 +33,7 @@ const passwordFail = function (error) {
 }
 
 const signOutSuccess = function () {
-  console.log('Signed Out')
+  // console.log('Signed Out')
   $('#message').text('You are now signed out.')
   $('.selectorTitle').nextAll().remove()
   store.user = {}
