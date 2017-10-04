@@ -63,7 +63,7 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .then(unhideSignOut)
     .then(hideSignIn)
-    .then(getGames)
+    // .then(getGames)
     .then(unhideGames)
     .then(showPassBtn)
     .then(hideSignUpBtn)
@@ -71,6 +71,12 @@ const onSignIn = function (event) {
     .then(showGame)
     .catch(ui.signInFailure)
 }
+
+// const onGetStats = function (event) {
+//   const data = getFormFields(this)
+//   event.preventDefault()
+//   getGames
+// }
 
 const onChangePassword = function (event) {
   const data = getFormFields(this)

@@ -119,6 +119,10 @@ const reset = function () {
   }
 }
 
+const getStats = function () {
+  events.getGames()
+}
+
 const addListeners = function () {
   divZero.addEventListener('click', onPlayerMove)
   divOne.addEventListener('click', onPlayerMove)
@@ -189,7 +193,7 @@ $(() => {
   events.addHandlers()
   $('.reset').on('click', reset)
   $('#sign-out').on('click', reset)
-  // $('.selectGame').on('click', loadGame)
+  $('.stats').on('click', getStats)
 })
 
 module.exports = {

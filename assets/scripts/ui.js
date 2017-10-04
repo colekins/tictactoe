@@ -49,9 +49,9 @@ const signOutFail = function () {
 const onGetGameSuccess = function (data) {
   store.games = data.games
   if (store.games.length === 0) {
-    $('#message').text('You are now signed in.')
+    $('#message').text('You have not played any games yet.')
   } else {
-    $('#message').text('Welcome. You have played ' + store.games.length + ' games!')
+    $('#message').text('You have played ' + store.games.length + ' games!')
     // console.log(store.games)
     // console.log(store.games.length)
   }
