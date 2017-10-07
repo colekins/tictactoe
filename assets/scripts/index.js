@@ -119,6 +119,17 @@ const reset = function () {
   }
 }
 
+const resetNoUser = function () {
+  gameBoard = ['d0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8']
+  lastTurn = 'O'
+  for (let i = 0; i < gameBoard.length; i++) {
+    const current = document.querySelector('#d' + i)
+    current.textContent = null
+  }
+  addListeners()
+  $('#message').text('Play!')
+}
+
 const getStats = function () {
   events.getGames()
 }
@@ -192,7 +203,7 @@ addListeners()
 $(() => {
   events.addHandlers()
   $('.reset').on('click', reset)
-  $('#sign-out').on('click', reset)
+  $('#sign-out').on('click', resetNoUser)
   $('.stats').on('click', getStats)
 })
 
