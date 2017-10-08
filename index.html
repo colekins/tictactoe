@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto+Condensed" rel="stylesheet">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+  <body class="container">
+      <div class="banner"><h1>Tic-Tac-Toe</h1></div>
+      <div class="message"id='message'>Welcome! Please sign in to play.</div>
+      <!-- <select class="hidden gameSelector">
+              <option class="selectorTitle"value="title">Saved Games</option>
+            </select>
+            <button type="button" class="hidden gameSelector selectGame">Select</button>
+      <div class="row"> -->
+      <div class="col-xs-12 unhidden"><form id="sign-in">
+            <fieldset>
+              <legend class="signBold">Sign In:</legend>
+                <input type="text" name="credentials[email]" placeholder="Email">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="submit" name="submit" class="btn-primary" value="Sign in">
+            </fieldset>
+      </form></div>
+      <br>
+    </div>
+    <input type="submit" class="hidden signOutButton btn-primary" id="sign-out" value="Sign Out">
+      <div class="row">
+      <div class="col-xs-12 unhidden signBtn"><form id="sign-up">
+        <fieldset>
+          <legend><a class="toggle" href="#">Sign Up</a></legend>
+          <div class="hidden signUpForm">
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" name="submit" class="button btn-primary" value="Sign up!">
+        </div>
+        </fieldset>
+  </form></div>
+</div>
+<div class="col-xs-12 hidden passBtn"><form id="change-password">
+    <fieldset>
+      <legend><a class="toggle" href="#">Change Password</a></legend>
+      <div class="hidden passForm">
+        <input type="password" name="passwords[old]" placeholder="Current Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <input type="submit" name="submit" class="btn-primary" value="Change Password">
+      </div>
+    </fieldset>
+</form></div>
+      <button type="button" class="btn-primary reset hidden untilSignIn">New Game</button>
+      <button type="button" class="btn-primary stats hidden untilSignIn">Get Stats</button>
+            <br>
+<div class="container gameArea hidden untilSignIn">
+        <div class="row game text-center">
+          <div class="col-xs-4 box" id="d0"></div>
+          <div class="col-xs-4 box" id="d1"></div>
+          <div class="col-xs-4 box" id="d2"></div>
+        </div>
+      <div class="row game text-center">
+          <div class="col-xs-4 box" id="d3"></div>
+          <div class="col-xs-4 box" id="d4"></div>
+          <div class="col-xs-4 box" id="d5"></div>
+        </div>
+      <div class="row game text-center">
+        <div class="col-xs-4 box" id="d6"></div>
+        <div class="col-xs-4 box" id="d7"></div>
+        <div class="col-xs-4 box" id="d8"></div>
+      </div>
+    </div>
+  </body>
+</html>
